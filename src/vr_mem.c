@@ -127,7 +127,7 @@ inline void* vr_push_size(vrMemoryArena* arena, size_t init_size) {
     size_t offset = vr_get_alignment_offset(arena);
 
     // get pointer to our region
-    result = arena->current_block->base + arena->current_block->used + offset;
+    result = &arena->current_block->base + arena->current_block->used + offset;
 
     // update used size
     arena->current_block->used += size;
